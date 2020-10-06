@@ -8,7 +8,7 @@ export const fetchCharacters = (searchTerm) => {
   };
 };
 
-export const fetchCharacterFulfilled = (payload) => {
+export const fetchCharactersFulfilled = (payload) => {
   return {
     type: FETCH_CHARACTERS_FULFILLED,
     payload,
