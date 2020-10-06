@@ -11,6 +11,7 @@ const fetchCharactersEpic = (action$) => {
     tap((value) => console.log('Gonna fetch', value)),
     mergeMap((action) =>
       ajax.getJSON(ENDPOINT + action.payload.searchTerm).pipe(
+        tap((value) => console.log('Loading!', value)),
         map((response) => fetchCharactersFulfilled(response.results)),
         takeUntil(
           action$.pipe(
